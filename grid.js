@@ -4,6 +4,8 @@ function Grid(numberOfRows, numberOfCols, parentElement) {
     this.numberOfCols = numberOfCols
     this.parentElement = parentElement
     this.board_create()
+
+
 }
 
 Grid.prototype = {
@@ -18,7 +20,20 @@ Grid.prototype = {
             });
         });
     },
+    
+    findCellByIndex: function (rowIndex, colIndex) {
+        const row = this.board[rowIndex]
+        if (row) {
+            return row[colIndex]
+        }
+        else {
+            return null
+        }
+    },
 
+    check_neighbor_cells: function() {
+        console.log(cellclicked)
+    },
 
     create_row: function () {
         const rowElement = document.createElement("div")

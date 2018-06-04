@@ -1,7 +1,8 @@
-function Cell(rowIndex, colIndex, parentElement, Grid) {
+function Cell(rowIndex, colIndex, parentElement, grid) {
     this.rowIndex = rowIndex
     this.colIndex = colIndex
     this.parentElement = parentElement
+    this.grid = grid
     this.add_element()
 }
 
@@ -16,15 +17,14 @@ Cell.prototype = {
        
     },
     
-    check_neighbor_cells: function() {
-        console.log(cellclicked)
-    },
+    
 
     handle_click: function (event) {
         let cellclicked = event.target;
-        let clickedRow = cellclicked.dataset.rowIndex
-        let clickedCol = cellclicked.dataset.colIndex
+        let clickedRow = Number(cellclicked.dataset.rowIndex)
+        let clickedCol = Number(cellclicked.dataset.colIndex)
+        this.grid.findCellByIndex(clickedRow,clickedCol)
         console.log(clickedRow,clickedCol);
-        this.checkneighbor_cells();
+        // this.checkneighbor_cells();
     },
 }
