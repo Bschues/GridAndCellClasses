@@ -1,0 +1,13 @@
+.board {
+    display: flex;
+    background-color: blue;
+    margin-bottom: 20px;
+    width: fit-content;
+}
+
+.cell {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    border: 1px solid red;
+}
